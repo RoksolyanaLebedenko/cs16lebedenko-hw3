@@ -11,5 +11,12 @@ package ua.edu.ucu.functions;
  */
 public interface MyPredicate {
 
+    MyPredicate pr = new MyPredicate() {
+        @Override
+        public boolean test(Object t) {
+            return ((Integer) t) > 0;
+        }
+    };
+
     boolean test(Object t);
 }

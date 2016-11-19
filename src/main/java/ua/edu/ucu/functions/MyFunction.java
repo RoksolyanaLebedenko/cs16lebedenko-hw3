@@ -11,5 +11,12 @@ package ua.edu.ucu.functions;
  */
 public interface MyFunction {
 
+    MyFunction func = new MyFunction() {
+        @Override
+        public Object apply(Object t) {
+            return 2 * ((Integer) t);
+        }
+    };
+
     Object apply(Object t);
 }
