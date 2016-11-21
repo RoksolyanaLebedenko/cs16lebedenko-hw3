@@ -10,6 +10,11 @@ public class FilterDecorator extends SmartArrayDecorator{
 
     public FilterDecorator(SmartArray nArr, MyPredicate predicate) {
         super(nArr);
+        Object[] arr = smartArray.toArray();
+        int end = arr.length;
+        for (int i = 0; i < end; ++i) {
+            arr[i] = predicate.test(arr[i]);
+        }
     }
 
     @Override
